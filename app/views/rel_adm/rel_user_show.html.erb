@@ -1,0 +1,22 @@
+<fieldset>
+<legend>Relatório de Usuários</legend>
+<br>
+<%= form_tag( {:action => 'rel_user', :format => :pdf}, :method => :post) do %>
+  <table align='center'>
+  <tr align="center">
+  <td>
+  <label for="find_campo">Ordenar Por:</label>
+
+  <%= radio_button(:pesquisa, params[:pesquisa], 'id', :checked => true) %>Código
+  <%= radio_button(:pesquisa, params[:pesquisa], 'name')%>Nome 
+ 
+  </td>
+  </tr>
+  </table>
+
+  <br><br>
+  <input type='submit' value=' Gerar Relatório ' /><br><br><br>
+
+<% end %>
+</fieldset>
+<% content_for :menu, render(:partial => './home/menuADM') -%>

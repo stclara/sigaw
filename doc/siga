@@ -1,0 +1,9 @@
+- bundle install
+- rake db:create
+- rake db:migrate
+- rake db:seed
+
+- Erro do simple_form em css estilizado:
+/initializers/simple_form.rb - comentar a linha  #config.error_notification_class = 'alert alert-error'
+
+- Dados iniciais no banco: /db/seeds.rb

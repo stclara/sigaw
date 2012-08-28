@@ -1,0 +1,18 @@
+<fieldset>
+<legend><img src="/assets/Key1.gif" width="60" height="50"></legend>
+  
+<%= form_tag sessions_path do %>
+    
+<table cellspacing="5" align='center'>
+  <tr align="left">
+    <td><%= label_tag :email %><br />
+    <%= text_field_tag :email, params[:email], :autofocus => true %></td>
+  <tr align="left">
+    <td><%= label_tag :password %><br />
+    <%= password_field_tag :password %></td>
+  </tr>
+  </table>
+
+    <p class="button"><%= submit_tag "Acesso" %></p>
+  <% end %>
+</fieldset>

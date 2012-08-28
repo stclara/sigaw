@@ -1,0 +1,43 @@
+<%= simple_form_for(@user) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+  	<table align='center'>
+  	  <tr align="left">
+  	    <td><%= f.input :name %></td>
+  	    <td><%= f.input :mail %></td>
+  	  </tr>
+  	  <tr align="left"> 
+        <td><%= f.input :password, :input_html => { :size => 40 } %></td>
+        <td><%= f.input :password_confirmation, :input_html => { :size => 40 } %></td>
+      </tr>
+  	</table><br>  
+  	<hr>
+  	<h4>ACESSO AOS MÓDULOS DO SISTEMA:</h4>
+    <table align="center" class="table">
+      <tr align="center">
+        <th>ADM</th>
+        <th>GER</th>
+        <th>OPR</th>
+        <th>EST</th>
+        <th>CXA</th>
+        <th>PAG</th>
+        <th>REC</th>
+      </tr>
+      <tr align="left">
+        <td><%= f.input :adm, :collection=>["SIM","NÃO"], :as => :radio_buttons, :label => false  %></td>
+        <td><%= f.input :ger, :collection=>["SIM","NÃO"], :as => :radio_buttons, :label => false  %></td>
+        <td><%= f.input :opr, :collection=>["SIM","NÃO"], :as => :radio_buttons, :label => false  %></td>
+        <td><%= f.input :est, :collection=>["SIM","NÃO"], :as => :radio_buttons, :label => false  %></td>
+        <td><%= f.input :cxa, :collection=>["SIM","NÃO"], :as => :radio_buttons, :label => false  %></td>
+        <td><%= f.input :pag, :collection=>["SIM","NÃO"], :as => :radio_buttons, :label => false  %></td>
+        <td><%= f.input :rec, :collection=>["SIM","NÃO"], :as => :radio_buttons, :label => false  %></td>
+      </tr>
+    </table><br>
+  	
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
