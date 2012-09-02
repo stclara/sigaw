@@ -1,19 +1,19 @@
-<ul id="nav">
-  <li><a href="#">CADASTRO</a>
-    <ul>
+<p align="center">Módulo Administrativo</p>
+<div id="wrapper-250">
+  <ul class="accordion">
+	<li id="one" class="files">
+      <a href="#one">Cadastros</a>
+      <ul class="sub-menu">
 	    <li><%= link_to 'Usuários', users_path %></li>
-	  </ul>
-    <div class="clear"></div>
-  </li>
-
-  <li><a href="#">RELATÓRIOS</a>
-    <ul>
-      <li><%= link_to 'Usuários', rel_user_show_path %></li>
-    </ul>
-    <div class="clear"></div>
-  </li>
-
-  <li><a href="#">MÓDULO ADMINISTRATIVO</a></li>
-</ul>
-<div class="clear"></div>
+      </ul>
+    </li>
+	
+	<li id="two" class="mail">
+      <a href="#two">Relatórios</a>
+      <ul class="sub-menu">
+		<li><%= link_to 'Usuários', rel_user_show_path %></li>
+      </ul>
+    </li>
+  </ul>	
+</div>
 

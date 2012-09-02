@@ -1,78 +1,76 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Sig@ - Sistema de Gestão @dministrativa</title>
+  <title>Sig@w - Sistema de Gestão @dministrativa Web.</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+	
   <div id="tudo">
-
-    <div id="header">
-      <div id="block">
-        <img src="/assets/logo.png">&nbsp&nbsp
-        
-        <% if current_user && current_user.adm == 'SIM' %>
-          <%= tooltip link_to(image_tag('adm.png', {:class => 'linkbotao',:border => 0}),
-          menuADM_url), { :tooltip => 'Módulo Administrativo.'} %>
-        <% end %>
-
-        <% if current_user && current_user.ger == 'SIM' %>
-          <%= tooltip link_to(image_tag('ger.png', {:class => 'linkbotao',:border => 0}),
-          menuGER_url), { :tooltip => 'Módulo Gerencial.'} %>
-        <% end %>
-
-        <% if current_user && current_user.opr == 'SIM' %>
-          <%= tooltip link_to(image_tag('opr.png', {:class => 'linkbotao',:border => 0}),
-          menuOPR_url), { :tooltip => 'Módulo Operacional.'} %>
-        <% end %>
-
-        <% if current_user && current_user.est == 'SIM' %>
-          <%= tooltip link_to(image_tag('est.png', {:class => 'linkbotao',:border => 0}),
-          menuEST_url), { :tooltip => 'Módulo Estoque.'} %>
-        <% end %>
-
-        <% if current_user && current_user.cxa == 'SIM' %>
-          <%= tooltip link_to(image_tag('cxa.png', {:class => 'linkbotao',:border => 0}),
-          menuCXA_url), { :tooltip => 'Módulo Caixa.'} %>
-        <% end %>
-
-        <% if current_user && current_user.pag == 'SIM' %>
-          <%= tooltip link_to(image_tag('pag.png', {:class => 'linkbotao',:border => 0}),
-          menuPAG_url), { :tooltip => 'Módulo Contas a Pagar.'} %>
-        <% end %>
-
-        <% if current_user && current_user.rec == 'SIM' %>
-          <%= tooltip link_to(image_tag('rec.png', {:class => 'linkbotao',:border => 0}),
-          menuREC_url), { :tooltip => 'Módulo Contas a Receber.'} %>
-        <% end %>
-        
-        <% if current_user %>
-          <img src="/assets/fone.png">
-           
-          <%= tooltip link_to(image_tag('senha.png', {:class => 'linkbotao',:border => 0}),
-          :controller => "users", :action => "show_password", :id => current_user.id), { :tooltip => 'Alterar Senha.'} %>
-          
-          <%= tooltip  link_to(image_tag('printer.png', {:class => 'linkbotao',:border => 0}),
-          reports_url), { :tooltip => 'Gerenciador de Relatórios.'}  %>
-          
-          <%= tooltip link_to(image_tag('sair.png', {:class => 'linkbotao',:border => 0}),
-          logout_path), { :tooltip => 'Sair do sistema.'} %>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-          <span>Usuário: <strong><%= current_user.mail %></span>
-	        <% else %>
-            <%= tooltip link_to(image_tag('login.png', {:class => 'linkbotao',:border => 0}),
-          login_path), { :tooltip => 'Logar no sistema.'} %>
-	      <% end %>
-        
-      </div>
-    </div>
-
-    <div id="menu"><%= yield :menu %></div>
     <div id="conteudo">
-      <div id="corpo">
-        <br>
+
+      <div id="topo">
+         <div id="block">
+        
+          <% if current_user && current_user.adm == 'SIM' %>
+            <%= tooltip link_to(image_tag('adm.png', {:class => 'linkbotao',:border => 0}),
+            menuADM_url), { :tooltip => 'Módulo Administrativo.'} %>
+          <% end %>
+
+          <% if current_user && current_user.ger == 'SIM' %>
+            <%= tooltip link_to(image_tag('ger.png', {:class => 'linkbotao',:border => 0}),
+            menuGER_url), { :tooltip => 'Módulo Gerencial.'} %>
+          <% end %>
+
+          <% if current_user && current_user.opr == 'SIM' %>
+            <%= tooltip link_to(image_tag('opr.png', {:class => 'linkbotao',:border => 0}),
+            menuOPR_url), { :tooltip => 'Módulo Operacional.'} %>
+          <% end %>
+
+          <% if current_user && current_user.est == 'SIM' %>
+            <%= tooltip link_to(image_tag('est.png', {:class => 'linkbotao',:border => 0}),
+            menuEST_url), { :tooltip => 'Módulo Estoque.'} %>
+          <% end %>
+
+          <% if current_user && current_user.cxa == 'SIM' %>
+            <%= tooltip link_to(image_tag('cxa.png', {:class => 'linkbotao',:border => 0}),
+            menuCXA_url), { :tooltip => 'Módulo Caixa.'} %>
+          <% end %>
+
+          <% if current_user && current_user.pag == 'SIM' %>
+            <%= tooltip link_to(image_tag('pag.png', {:class => 'linkbotao',:border => 0}),
+            menuPAG_url), { :tooltip => 'Módulo Contas a Pagar.'} %>
+          <% end %>
+
+          <% if current_user && current_user.rec == 'SIM' %>
+            <%= tooltip link_to(image_tag('rec.png', {:class => 'linkbotao',:border => 0}),
+            menuREC_url), { :tooltip => 'Módulo Contas a Receber.'} %>
+          <% end %>
+        
+          <% if current_user %>
+            <img src="/assets/fone.png">
+           
+            <%= tooltip link_to(image_tag('senha.png', {:class => 'linkbotao',:border => 0}),
+            :controller => "users", :action => "show_password", :id => current_user.id), { :tooltip => 'Alterar Senha.'} %>
+          
+            <%= tooltip  link_to(image_tag('printer.png', {:class => 'linkbotao',:border => 0}),
+            reports_url), { :tooltip => 'Gerenciador de Relatórios.'}  %>
+            
+            <%= tooltip link_to(image_tag('sair.png', {:class => 'linkbotao',:border => 0}),
+            logout_path), { :tooltip => 'Sair do sistema.'} %> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          
+            <span class="usuario" ><b>Usuário: <strong><%= current_user.mail %></b></span>
+	      <% else %>
+            <%= tooltip link_to(image_tag('login.png', {:class => 'linkbotao',:border => 0}),
+            login_path), { :tooltip => 'Logar no sistema.'} %>
+	      <% end %>
+        </div>
+      </div>
+
+      <div id="principal">
+      <br>
         <div class="flash">
           <% flash.each do |type, message| -%>
             <div class="message <%= type %>">
@@ -80,13 +78,27 @@
             </div>
           <% end -%>
         </div>
-       <br>
-       <center><%= yield %></center>
-      </div>
-      <div id="footer">Leftright &copy; <%= Time.now.year %> - Powered by Rails 3.2.8 / Postgresql 9.1 - stclara@gmail.com</div>
+        <br>
+        <center><%= yield %></center>       
+      </div> <!-- Fim da div#principal -->
+
+      <div id="auxiliar">
+        <div id="menu"><%= yield :menu %></div>
+        <br>
+        <hr />
+        <br>
+        <h4>AVISOS/NOTÍCIAS</h4>
+      </div> <!-- Fim da div#auxiliar -->
+
+      <div class="clear"></div>
+
+    </div> <!-- Fim da div#conteudo -->
+    
+    <div id="rodape">
+      <p>Leftright &copy; <%= Time.now.year %> - Powered by Rails 3.2.8 / Postgresql 9.1 - stclara@gmail.com</p>
     </div>
-  </div>
-
-
+    
+    </div> <!-- Fim da div#tudo -->
+	
 </body>
 </html>

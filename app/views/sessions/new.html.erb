@@ -1,6 +1,8 @@
 <fieldset>
-<legend><img src="/assets/Key1.gif" width="60" height="50"></legend>
-  
+	<legend><img src="/assets/cadeado.png" width="70" height="60"></legend>
+	
+ <p align="left"><h2><b>LOGIN:</b></h2></p>	
+	
 <%= form_tag sessions_path do %>
     
 <table cellspacing="5" align='center'>
@@ -12,8 +14,9 @@
     <%= password_field_tag :password %></td>
   </tr>
   </table>
+  <p align="left"></p>	
 
-<p>email: siga@siga.com   |   password: siga2012</p>
+<p>  email: siga@siga.com   |   password: siga2012 </p>
     <p class="button"><%= submit_tag "Acesso" %></p>
   <% end %>
 </fieldset>

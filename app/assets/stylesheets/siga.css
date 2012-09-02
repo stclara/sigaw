@@ -5,9 +5,11 @@ h1 { margin: 15px 0; font-size: 22px; font-weight: normal; }
 h2 { font-size: 22px; margin: 15px 0; font-weight: normal;}
 h3 { font-size: 18px; margin: 10px 0; font-weight: normal;}
 h4 { font-size: 16px; margin: 10px 0; font-weight: normal;}
-hr {height: 1px; border: 0; }
+hr {height: 2px; }
 p { margin: 15px 0;}
 a img { border: none; }
+
+html, body {height:100%;}
 
 body {
   background:  url(background1.jpg) top center repeat;
@@ -17,66 +19,103 @@ body {
   font-size: 12px;
   margin: 0;
   padding: 0;
+  text-align:center;
 }
 
-#tudo {
-   min-width: 960px;
-   margin: 0 auto;
-}
+/* Especificação da página */
 
-#header {
-  width: 100%;
-  height: 60px;
-  background-color: #990000;
-  color: #FFFFFF;
+#tudo { 
+  width:90%;
+  position:relative;  /*Contexto de posicionamento */
+  margin:0 auto;
+  text-align:left;
+  min-height:95%;/**/
+}
+	
+* html #tudo {height: 100%;}
+
+#conteudo {padding-bottom:30px;}
+
+#topo {
+  margin-top: 10px;
+  background: #FFFFFF;
+  width:100%;
+  height:50px;
   font-size: 16px;
+  text-align:center;
+  padding-top:2px;
+  border: 2px solid #990000;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+     -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+          box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
 }
-
-#menu {
-  width: 100%;
-  height: 35px;
-  background-image: url(menu.png);
-}
-
-#conteudo {
-   width: 70%;
-   margin-left: auto;
-   margin-right: auto;
-}
-
-#corpo {
-    width: 100%;
-    min-height: 480px;
-    background-color:#FFFFFF;
-    border: 2px solid #990000;
-    text-align: center;
-    background-image: url(siga.png);
-    background-repeat: no-repeat;
-    background-position: center center;
-    -moz-border-radius: 8px;
-    -webkit-border-radius: 8px;
-    border-radius: 8px;
-}
-
-#footer {
-   width: 100%;
-   height: 20px;
-   padding-top: 4px;
-   border: 2px solid #990000;
-   background-image: url(menu.png);
-   font: 11px Arial bold;
-   font-weight: bold;
-   color:#FFFFFF;
-   text-align: center;
-   -moz-border-radius: 5px;
-   -webkit-border-radius: 5px;
-   border-radius: 5px;
+	
+#topo img {
+  padding-left: 10px;
 }
 
 #block {
-   padding: 8px 5px 2px 10px;
-   float: left;
+  padding: 8px 5px 2px 10px;
+  float: left;
 }
+	
+#principal {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width:75%;
+  min-height: 460px; 
+  padding-right:20px;
+  padding-left:20px;
+  float:right;
+  padding-top:10px;
+  text-align:justify;
+  background: #FFFFFF;
+  background-image: url(logo.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  border: 2px solid #990000;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+     -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+          box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+}
+	
+#auxiliar {
+  width:19%;
+  float:left;
+  padding-top:10px;
+  color: red;
+}
+		
+#rodape {
+  width:100%;
+  height:20px;
+  position: absolute;
+  bottom: 0; 
+  border: 2px solid #990000;
+  background-image: url(menu.png);
+  text-align:center;
+  margin-bottom: 10px;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+     -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+          box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+}
+	
+#rodape p {
+  margin:0;
+  font-weight:bold;
+  color:#FFFFFF;
+}
+	
+.clear {clear:both;}
 
 mytooltip {
   border-bottom: 2px dotted green
@@ -102,9 +141,9 @@ fieldset{
   padding: 10px;
   border: 2px solid #990000;
   background: #E0FFFF;
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
-  border-radius: 10px;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
   -moz-opacity:.90;
   opacity:.90;
 
@@ -116,9 +155,9 @@ legend {
    padding: 8px 10px;
    background: #E0FFFF;
    color: red;
-   -moz-border-radius: 10px;
-   -webkit-border-radius: 10px;
-   border-radius: 10px;
+   -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
 }
 
 .table {
@@ -157,9 +196,12 @@ legend {
 }
 
 .simple_form .error_notification {
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-   border-radius: 5px;
+ -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+     -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+          box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
   text-align:center;
   margin: 0 auto 15px;
   padding-top: 12px;
@@ -192,9 +234,12 @@ legend {
 
 /* flash-messages */
 .flash .message {
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
-  border-radius: 3px;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+     -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+          box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
   text-align:center;
   margin: 0 auto 15px;
   width: 50%;
@@ -225,80 +270,188 @@ legend {
 
 /*  end flash-messages */
 
-/*  Menu dos módulos */
+/* *********************************************************************************************
 
-#nav {
-	 margin:0; 
-   padding:0; 
-	 list-style:none;
-}	
+How to Create CSS3 + jQuery Accordion Menu [Tutorial]
+"How to Create CSS3 + jQuery Accordion Menu" that was specially made for DesignModo by our friend Valeriu Timbuc. 
+
+Links:
+http://vtimbuc.net/
+https://twitter.com/vtimbuc
+http://designmodo.com/futurico
+http://vladimirkudinov.com
+http://rockablethemes.com
+
+********************************************************************************************* */
+
+/* Reset */
+
+.accordion,
+.accordion ul,
+.accordion li,
+.accordion a,
+.accordion span {
+	margin: 0;
+	padding: 0;
+	border: none;
+	outline: none;
+}
+
+.accordion li {
+	list-style: none;
+}
+
+/* Layout & Style */
+
+.accordion li > a {
+	display: block;
+	position: relative;
+	min-width: 110px;
+	padding: 0 10px 0 40px;
+	height: 32px;
+
+	color: #fdfdfd;
+	font: bold 12px/32px Arial, sans-serif;
+	text-decoration: none;
+	text-shadow: 0px 1px 0px rgba(0,0,0, .35);
+
+	background: #6c6e74;
+	background: -moz-linear-gradient(top,  #6c6e74 0%, #4b4d51 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#6c6e74), color-stop(100%,#4b4d51));
+	background: -webkit-linear-gradient(top,  #6c6e74 0%,#4b4d51 100%);
+	background: -o-linear-gradient(top,  #6c6e74 0%,#4b4d51 100%);
+	background: -ms-linear-gradient(top,  #6c6e74 0%,#4b4d51 100%);
+	background: linear-gradient(top,  #6c6e74 0%,#4b4d51 100%);
+
+	-webkit-box-shadow: inset 0px 1px 0px 0px rgba(255,255,255, .1), 0px 1px 0px 0px rgba(0,0,0, .1);
+	-moz-box-shadow: inset 0px 1px 0px 0px rgba(255,255,255, .1), 0px 1px 0px 0px rgba(0,0,0, .1);
+	box-shadow: inset 0px 1px 0px 0px rgba(255,255,255, .1), 0px 1px 0px 0px rgba(0,0,0, .1);
+}
+
+.accordion > li:hover > a,
+.accordion > li:target > a,
+.accordion > li > a.active {
+	color: #3e5706;
+	text-shadow: 1px 1px 1px rgba(255,255,255, .2);
 	
-/* make the LI display inline */
-/* it's position relative so that position absolute */
-/* can be used in submenu */
-#nav li {
- 	float:left; 
-	display:block; 
-	width:250px; 
-	background-image: url(menu.png);
-	position:relative;
-	z-index:500; 
-	margin:0 1px;
-}
-		
-/* this is the parent menu */
-#nav li a {
-    display:block; 
-	padding:4px 5px 0 5px; 
-	font-weight:700;  
-	height:25px; 
-	text-decoration:none; 
-	text-align:center; 
-	color:#FFFFFF;
+	/*background: url(../img/active.png) repeat-x;*/
+	background: #a5cd4e;
+	background: -moz-linear-gradient(top,  #a5cd4e 0%, #6b8f1a 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a5cd4e), color-stop(100%,#6b8f1a));
+	background: -webkit-linear-gradient(top,  #a5cd4e 0%,#6b8f1a 100%);
+	background: -o-linear-gradient(top,  #a5cd4e 0%,#6b8f1a 100%);
+	background: -ms-linear-gradient(top,  #a5cd4e 0%,#6b8f1a 100%);
+	background: linear-gradient(top,  #a5cd4e 0%,#6b8f1a 100%);	
 }
 
-#nav li a:hover {
-  color:#fff;
-}
+.accordion li > a span {
+	display: block;
+	position: absolute;
+	top: 7px;
+	right: 0;
+	padding: 0 10px;
+	margin-right: 10px;
 	
-/* you can make a different style for default selected value */
-#nav a.selected {
-  color:#f00;
-}
+	font: normal bold 12px/18px Arial, sans-serif;
+	background: #404247;
 	
-/* submenu, it's hidden by default */
-#nav ul {
-    position:absolute; 
-	left:0; 
-	display:none; 
-	margin:0 0 0 -1px; 
-	padding:0; 
-	list-style:none;
-}
-		
-#nav ul li {
-    width:250px; 
-	float:left; 
-	border-top:1px solid #fff;
-}
-		
-/* display block will make the link fill the whole area of LI */
-#nav ul a {
-    display:block;  
-	height:14px;
-	padding:2px 1px 12px 1px; 
-	color:#FFFFFF;
-}
-		
-#nav ul a:hover {
-  text-decoration:underline;	
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+
+	-webkit-box-shadow: inset 1px 1px 1px rgba(0,0,0, .2), 1px 1px 1px rgba(255,255,255, .1);
+	-moz-box-shadow: inset 1px 1px 1px rgba(0,0,0, .2), 1px 1px 1px rgba(255,255,255, .1);
+	box-shadow: inset 1px 1px 1px rgba(0,0,0, .2), 1px 1px 1px rgba(255,255,255, .1);
 }
 
-/* fix ie6 small issue */
-/* we should always avoid using hack like this */
-/* should put it into separate file : ) */
-*html #nav ul {
-  margin:0 0 0 -2px;
+.accordion > li:hover > a span,
+.accordion > li:target > a span,
+.accordion > li > a.active span {
+	color: #fdfdfd;
+	text-shadow: 0px 1px 0px rgba(0,0,0, .35);
+	background: #3e5706;
 }
 
-/*  Fim menu nevegação */
+/* Images */
+
+.accordion > li > a:before {
+	position: absolute;
+	top: 0;
+	left: 0;
+	content: '';
+	width: 24px;
+	height: 24px;
+	margin: 4px 8px;
+
+	background-repeat: no-repeat;
+	background-image: url(icons.png);
+	background-position: 0px 0px;
+}
+
+.accordion li.files > a:before { background-position: 0px 0px; }
+.accordion li.files:hover > a:before,
+.accordion li.files:target > a:before,
+.accordion li.files > a.active:before { background-position: 0px -24px; }
+
+.accordion li.mail > a:before { background-position: -24px 0px; }
+.accordion li.mail:hover > a:before,
+.accordion li.mail:target > a:before,
+.accordion li.mail > a.active:before { background-position: -24px -24px; }
+
+.accordion li.cloud > a:before { background-position: -48px 0px; }
+.accordion li.cloud:hover > a:before,
+.accordion li.cloud:target > a:before,
+.accordion li.cloud > a.active:before { background-position: -48px -24px; }
+
+.accordion li.sign > a:before { background-position: -72px 0px; }
+.accordion li.sign:hover > a:before,
+.accordion li.sign:target > a:before,
+.accordion li.sign > a.active:before { background-position: -72px -24px; }
+
+/* Sub Menu */
+
+.sub-menu li a {
+	color: #797979;
+	text-shadow: 1px 1px 0px rgba(255,255,255, .2);
+
+	background: #e5e5e5;
+	border-bottom: 1px solid #c9c9c9;
+
+	-webkit-box-shadow: inset 0px 1px 0px 0px rgba(255,255,255, .1), 0px 1px 0px 0px rgba(0,0,0, .1);
+	-moz-box-shadow: inset 0px 1px 0px 0px rgba(255,255,255, .1), 0px 1px 0px 0px rgba(0,0,0, .1);
+	box-shadow: inset 0px 1px 0px 0px rgba(255,255,255, .1), 0px 1px 0px 0px rgba(0,0,0, .1);
+}
+
+.sub-menu li:hover a { background: #efefef; }
+
+.sub-menu li:last-child a { border: none; }
+
+.sub-menu li > a span {
+	color: #797979;
+	text-shadow: 1px 1px 0px rgba(255,255,255, .2);
+	background: transparent;
+	border: 1px solid #c9c9c9;
+
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+}
+
+.sub-menu em {
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin-left: 14px;
+	color: #a6a6a6;
+	font: normal 10px/32px Arial, sans-serif;
+}
+
+/* Functionality */
+
+.accordion li > .sub-menu {
+	display: none;
+}
+
+.accordion li:target > .sub-menu {
+	display: block;
+}
