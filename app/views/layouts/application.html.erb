@@ -83,11 +83,12 @@
       </div> <!-- Fim da div#principal -->
 
       <div id="auxiliar">
+      	<br>
+      	<hr />
         <div id="menu"><%= yield :menu %></div>
-        <br>
-        <hr />
-        <br>
-        <h4>AVISOS/NOTÍCIAS</h4>
+        
+        <%= render partial: 'posts/noticias' %>
+
       </div> <!-- Fim da div#auxiliar -->
 
       <div class="clear"></div>

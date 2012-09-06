@@ -1,0 +1,25 @@
+<%= simple_form_for(@post) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+  	
+  	<table align='center' >
+    <tr align="left">
+  	  <td><%= f.input :title %></td>
+    </tr>
+    
+    <tr align="left">
+  	  <td><%= f.input :visible, :collection=>["SIM","NÃO"], :as => :radio_buttons %></td>
+    </tr>
+    
+    <tr align="left">
+  	  <td><%= f.input :photo, :as => :file  %></td>
+    </tr>
+    </table><br>
+  	
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

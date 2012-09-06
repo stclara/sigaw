@@ -1,0 +1,40 @@
+<fieldset>
+<legend>Notícias</legend>
+<br>
+<%= form_tag posts_path, :method => :get do %>
+
+  <table align='center'>
+  <tr align="left">
+  <td>
+  <label for="find_campo">Campo:</label><br>
+
+  <%= select_tag :campo, options_for_select([["Título", "title"]]) %>
+
+
+  </td>
+  <td>
+  <label for="find_chave">Chave:</label><br>
+  <%= text_field_tag :chave, params[:chave], "size" => 40, "maxlenght" => 60 %>
+  </td>
+  <td>
+  <br>
+  <input type='submit' value='', class="botao"/>
+
+  </td>
+  </tr>
+  </table>
+
+<% end %>
+
+<% if !params[:campo].nil? %>
+  <div id="result">
+    <%= render :partial => 'show', :locals => { :post => @posts } %>
+  </div>
+<% end %>
+<br>
+<p align='right'>
+<%= tooltip link_to(image_tag("add.png", {:border => 0}), new_post_path), { :tooltip => 'Adicionar novo registro.' } %>
+</p>
+
+</fieldset>
+<% content_for :menu, render(:partial => './home/menuADM') -%>

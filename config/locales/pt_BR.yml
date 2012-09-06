@@ -207,6 +207,7 @@
 
     models:
       user: 'Usuários'
+      post: 'Notícias'
      
     attributes:
       user:
@@ -214,6 +215,11 @@
         password: "Senha"
         password_confirmation: "Confirma senha"
         name: "Nome"
+        
+      post:
+        visible: "Visivel"
+        title: "Título"
+        photo: "Imagem"  
        
   simple_form:
     "yes": 'Sim'

@@ -74,4 +74,6 @@ $(document).ready(function() {
 
 		});
 		
-
+$(window).load(function() {
+        $('#slider').nivoSlider({ animSpeed: 800, pauseTime: 12000 });
+    });

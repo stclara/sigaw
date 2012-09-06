@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<br>
+<table class="table">
+<tr>
+<th>CÓDIGO</th>
+<th>TÍTULO</th>
+<th>AÇÃO</th>
+</tr>
+
+<% @posts.each do |post| %>
+  <tr>
+    <td width="10%" align='center'><%=h (post.id) %></td>
+    <td width="80%" align='left'><%=h (post.title) %></td>
+  <td width="10%" align='center'>   
+    <%= tooltip link_to(image_tag("edit.png", {:border => 0}), edit_post_path(post)), { :tooltip => 'Editar Registro.' } %>&nbsp
+    <%= tooltip link_to(image_tag("delete.png", {:border => 0}), post, :confirm => 'Confirma a exclusão?', :method => :delete), { :tooltip => 'Deletar Registro.' }  %></td>  
+
+  </tr>
+<% end %>
+</table>
+<br>
+<p><%= will_paginate @posts, :params => {:campo => params[:campo], :chave => params[:chave]} %></p>

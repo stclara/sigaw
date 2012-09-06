@@ -1,0 +1,16 @@
+<p align="center"><b>COMUNICADOS / NOTÍCIAS</b></p>
+
+<% @noticias = Post.all(:conditions => ["visible = ?", 'SIM'],:order => 'id DESC') %>
+
+<div id="wrapper">
+  <div class="slider-wrapper theme-default">
+    <div id="slider" class="nivoSlider">
+    <% if !@noticias.nil? %>
+      <% @noticias.each do |n| %>
+        <img src=<%= n.photo.url(:medium) %>  alt="" />
+      <% end %>
+    <% end %>    
+    </div>
+  </div>
+</div>
+<hr />  

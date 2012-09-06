@@ -24,7 +24,7 @@ class RelAdmController < ApplicationController
       d.image "#{Rails.root}/app/assets/images/siga.eps"
       d.text_in :text => "RELATÓRIO DE USUÁRIOS", :x => 8, :y => 26.8, :with => :bold
       d.text_in :text => "Página %current_page%", :x => 10, :y => 0.80, :with => :normal
-      d.text_in :text =>"Emitido por SIG@ - Sistema de Gestão @dministrativa em " <<  DateTime.now.strftime("%d/%m/%Y - %H:%M:%S") << ' - ' << current_user.mail, :x => 4, :y => 1.2, :with => :normal
+      d.text_in :text =>"Emitido por SIG@W - Sistema de Gestão @dministrativa Web em " <<  DateTime.now.strftime("%d/%m/%Y - %H:%M:%S") << ' - ' << current_user.mail, :x => 3.5, :y => 1.2, :with => :normal
     end
 
    doc.grid :data => @users do |g|

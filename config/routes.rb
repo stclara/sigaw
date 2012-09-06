@@ -1,4 +1,6 @@
 Siga::Application.routes.draw do
+  resources :posts
+  
   resources :reports
 
   get "home/index"
