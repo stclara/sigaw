@@ -1,0 +1,22 @@
+<fieldset>
+<legend>Relatório de Históricos do Caixa</legend>
+<br>
+<%= form_tag( {:action => 'rel_historical_cash', :format => :pdf}, :method => :post) do %>
+  <table align='center'>
+  <tr align="center">
+  <td>
+  <label for="find_campo">Ordenar Por:</label>
+
+  <%= radio_button(:pesquisa, params[:pesquisa], 'id', :checked => true) %>Código
+  <%= radio_button(:pesquisa, params[:pesquisa], 'description')%>Descrição 
+ 
+  </td>
+  </tr>
+  </table>
+
+  <br><br>
+  <input type='submit' value=' Gerar Relatório ' /><br><br><br>
+
+<% end %>
+</fieldset>
+<% content_for :menu, render(:partial => './home/menuCXA') -%>

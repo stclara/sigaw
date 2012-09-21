@@ -4,16 +4,17 @@
 	<li id="one" class="files">
       <a href="#one">Cadastros</a>
       <ul class="sub-menu">
-	    <li><a href="#">Cadastro1</a></li>
-		<li><a href="#">Cadastro2</a></li>
+	    <li><%= link_to 'Históricos do Caixa', historical_cashes_path %></li>
+	    <li><%= link_to 'Data do Caixa', date_cashes_path %></li>
+	    <li><%= link_to 'Lançamentos do Caixa', cashes_path %></li>
       </ul>
     </li>
 	
 	<li id="two" class="mail">
       <a href="#two">Relatórios</a>
       <ul class="sub-menu">
-		<li><a href="#">Relatório1</a></li>
-		<li><a href="#">Relatório2</a></li>
+		<li><%= link_to 'Históricos do Caixa', rel_historical_cash_show_path %></li>
+		<li><%= link_to 'Movimento do Caixa', rel_mov_cash_path %></li>
       </ul>
     </li>
   </ul>	

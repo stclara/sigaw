@@ -1,0 +1,20 @@
+<fieldset>
+<legend>Data do Caixa</legend>
+<br>
+
+<% if !@date_cash.nil? %>
+  
+   <p class="atention"> Data Atual do Caixa: <%= @date_cash.date_cash.strftime("%d/%m/%Y ") %></p>
+   
+   <% else %>
+   
+   <p class="atention"> <b>Atenção: Caixa ainda não possui data inicial cadastrada.</b></p>
+   <% end %>
+
+<br>
+<p align='right'>
+<%= tooltip link_to(image_tag("add.png", {:border => 0}), new_date_cash_path), { :tooltip => 'Adicionar novo registro.' } %>
+</p>
+
+</fieldset>
+<% content_for :menu, render(:partial => './home/menuCXA') -%>

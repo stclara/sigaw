@@ -16,7 +16,7 @@ $(document).ready(function () {
 
 $(function() {
         $.mask.definitions['~'] = "[+-]";
-        $("#date").mask("99/99/9999", {autoclear:false});
+        $("#date_cash").mask("99/99/9999", {autoclear:false});
         $("#date1").mask("99/99/9999", {autoclear:false});
         $("#date2").mask("99/99/9999", {autoclear:false});
         $("#phone").mask("(99) 9999-9999", {autoclear:false});
@@ -43,37 +43,35 @@ $(function() {
     });
     
 $(document).ready(function() {
+  // Store variables		
+  var accordion_head = $('.accordion > li > a'),
+  accordion_body = $('.accordion li > .sub-menu');
 
-			// Store variables
-			
-			var accordion_head = $('.accordion > li > a'),
-				accordion_body = $('.accordion li > .sub-menu');
+  // Open the first tab on load
+  accordion_head.first().addClass('active').next().slideDown('normal');
 
-			// Open the first tab on load
+  // Click function
+  accordion_head.on('click', function(event) {
 
-			accordion_head.first().addClass('active').next().slideDown('normal');
+  // Disable header links
+  event.preventDefault();
 
-			// Click function
+  // Show and hide the tabs on click
+  if ($(this).attr('class') != 'active'){
+    accordion_body.slideUp('normal');
+	$(this).next().stop(true,true).slideToggle('normal');
+    accordion_head.removeClass('active');
+	$(this).addClass('active');
+	}
 
-			accordion_head.on('click', function(event) {
+  });
 
-				// Disable header links
-				
-				event.preventDefault();
-
-				// Show and hide the tabs on click
-
-				if ($(this).attr('class') != 'active'){
-					accordion_body.slideUp('normal');
-					$(this).next().stop(true,true).slideToggle('normal');
-					accordion_head.removeClass('active');
-					$(this).addClass('active');
-				}
-
-			});
-
-		});
+});
 		
 $(window).load(function() {
-        $('#slider').nivoSlider({ animSpeed: 800, pauseTime: 12000 });
-    });
+  $('#slider').nivoSlider({ animSpeed: 800, pauseTime: 12000 });
+});
+
+$(document).ready(function(){
+  $("#value_cash").maskMoney({decimal:",",thousands:"."});
+});

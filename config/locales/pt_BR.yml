@@ -46,7 +46,7 @@
     format:
       separator: ','
       delimiter: '.'
-      precision: 3
+      precision: 2
       significant: false
       strip_insignificant_zeros: false
 
@@ -208,6 +208,9 @@
     models:
       user: 'Usuários'
       post: 'Notícias'
+      historical_cash: 'Histórico do Caixa'
+      date_cash: 'Data do Caixa'
+      cash: 'Caixa'
      
     attributes:
       user:
@@ -220,6 +223,20 @@
         visible: "Visivel"
         title: "Título"
         photo: "Imagem"  
+        
+      historical_cash:
+        type_cash: "Tipo"
+        description: "Descrição"
+        
+      date_cash:
+        date_cash: 'Data do Caixa'
+        
+      cash:
+        historical_cash_id: 'Histórico'
+        value_cash: 'Valor'
+        description: 'Descrição'
+        type_cash: 'Tipo de Lançamento' 
+        type_payment: 'Tipo de Pagamento' 
        
   simple_form:
     "yes": 'Sim'

@@ -1,0 +1,27 @@
+<%= simple_form_for(@cash) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+  	
+  <%= f.input :date_cash, :as => :hidden, :input_html => { :value => @data } %>
+ 	
+  	<table align='center' >
+    <tr align="left">
+      <td><%= f.input :historical_cash_id, :collection => HistoricalCash.all, :label_method => :description %></td>
+  	  <td><%= f.input :value_cash,  :input_html => { :type => 'text', :id => 'value_cash' } %></td>
+  	</tr>
+  	<tr align="left">
+  	  <td><%= f.input :description, :as => :text, :input_html => { :cols => "46", :rows=>"3" } %></td>
+  	  <td><%= f.input :type_cash, :collection=>[["Débito","D"], ["Crédito", "C"]], :as => :radio_buttons %></td>
+  	</tr>
+  	<tr align="left">
+  	  <td><%= f.input :type_payment, :collection=>[["Dinheiro","D"], ["Cartão", "C"], ["Cheque", "h"]], :as => :radio_buttons %></td>
+  	</tr>
+  	</table>  
+  	   
+  </div>
+
+  <div class="form-actions">
+    <br><%= f.button :submit %>
+  </div>
+<% end %>

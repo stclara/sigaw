@@ -135,7 +135,7 @@ mytooltip {
 }
 
 fieldset{
-  width: 750px;
+  width: 850px;
   margin: 2%;
   text-align: center;
   padding: 10px;
@@ -161,7 +161,7 @@ legend {
 }
 
 .table {
-  width: 740px;
+  width: 830px;
   border-width: 20px;
   padding:5px;
 }
@@ -193,6 +193,18 @@ legend {
 
 .simple_form input[type='password']{
 	width: 350px;
+}
+
+.simple_form .select {
+  width: 350px;
+}
+
+label.collection_radio {
+  margin-right: 20px;
+  vertical-align: -2px;
+  margin-left:   2px;
+  font-family: arial, monospace;
+  display: inline;
 }
 
 .simple_form .error_notification {
@@ -258,7 +270,7 @@ legend {
 
 .flash .alert {
   border: 1px solid #fffaaa;
-  background-color: #ffffcc;
+  background-color: #f0f0f0;
   background: #FF3030 url(error.png) no-repeat 5px center;
 }
 
@@ -266,6 +278,25 @@ legend {
   border: 1px solid #1FDF00;
   background-color: #BBFFB6;
   background: #e2f9e3 url(tick.png) no-repeat 5px center;
+}
+
+.atention{
+	border: 1px solid #1FDF00;
+  background-color: #BBFFB6;
+  background: #e2f9e3 url(information.png) no-repeat 5px center;
+	-webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+     -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+          box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+  text-align:center;
+  margin: 0 auto 15px;
+  width: 80%;
+  height: 50px;
+  font: 16px Arial bold;
+  color: red;
+  padding-top: 30px;	
 }
 
 /*  end flash-messages */

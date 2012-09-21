@@ -1,4 +1,10 @@
 Siga::Application.routes.draw do
+  resources :cashes
+
+  resources :date_cashes
+
+  resources :historical_cashes
+  
   resources :posts
   
   resources :reports
@@ -12,6 +18,11 @@ Siga::Application.routes.draw do
   resources :rel_adm
   match "rel_user" => "rel_adm#rel_user"
   match "rel_user_show" => "rel_adm#rel_user_show"
+  
+  resources :rel_cxa
+  match "rel_historical_cash" => "rel_cxa#rel_historical_cash"
+  match "rel_historical_cash_show" => "rel_cxa#rel_historical_cash_show"
+  match "rel_mov_cash" => "rel_cxa#rel_mov_cash"
 
   get "home/index"
   get "menuADM" => "home#menuADM", :as => "menuADM"

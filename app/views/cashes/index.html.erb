@@ -1,0 +1,49 @@
+<fieldset>
+<% if !@data.nil? %>	
+  <legend>Lançamentos do Caixa -  Data Atual do Caixa: <%= @data.strftime("%d/%m/%Y ") %> </legend>
+<% else %> 
+  <legend>Lançamentos do Caixa - <b>Atenção: Caixa ainda não possui data inicial cadastrada.</b></legend>
+<% end %>
+<br>
+  <table class="table">
+  <tr>	
+  <% @saldos.each do |s| %>
+  <td width="25%">Saldo Anterior <br><%= number_to_currency(s.saldo_anterior) %></td>
+  <td width="25%">Débitos <br><%= number_to_currency(s.debito) %></td>
+  <td width="25%">Créditos <br><%= number_to_currency(s.credito) %></td>
+  <td width="25%">Saldo Atual <br><%= number_to_currency(s.saldo) %></td>
+  </tr>
+  </table>
+  <% end %>
+
+<table class="table">
+<tr>
+  <th>DESCRIÇÃO</th>
+  <th>HISTÓRICO</th>
+  <th>VALOR</th>
+  <th>TIPO</th>
+  <th>AÇÃO</th>
+</tr>
+
+<% if !@cashes.nil? %>
+  <% @cashes.each do |cash| %>
+  <tr>
+    <td width="35%" align='left'><%=h (cash.description) %></td>
+    <td width="35%" align='left'><%=h (cash.historical_cash.description) %></td>
+    <td width="15%" align='right'><%=h (number_to_currency(cash.value_cash)) %></td>
+    <td width="5%" align='center'><%=h (cash.type_cash) %></td>
+  <td width="10%" align='center'>   
+    <%= tooltip link_to(image_tag("edit.png", {:border => 0}), edit_cash_path(cash)), { :tooltip => 'Editar Registro.' } %>&nbsp
+    <%= tooltip link_to(image_tag("delete.png", {:border => 0}), cash, method: :delete, data: { confirm: 'Confirma a exclusão?' }), { :tooltip => 'Deletar Registro.' }  %></td>  
+  </tr>
+<% end %>
+</table>
+<% end %>
+
+<br>
+<p align='right'>
+<%= tooltip link_to(image_tag("add.png", {:border => 0}), new_cash_path), { :tooltip => 'Adicionar novo registro.' } %>
+</p>
+
+</fieldset>
+<% content_for :menu, render(:partial => './home/menuCXA') -%>

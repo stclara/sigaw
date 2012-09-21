@@ -1,0 +1,10 @@
+<fieldset>
+<legend>Nova Data do Caixa</legend>
+
+<%= render 'form' %>
+<p align='right'>
+<%= tooltip link_to(image_tag("voltar.png", {:border => 0}), date_cashes_path), {:tooltip => 'Retornar.'} %>
+</p>
+
+</fieldset>
+<% content_for :menu, render(:partial => './home/menuCXA') -%>

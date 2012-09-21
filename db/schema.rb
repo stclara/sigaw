@@ -11,7 +11,31 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120905165152) do
+ActiveRecord::Schema.define(:version => 20120919142424) do
+
+  create_table "cashes", :force => true do |t|
+    t.integer  "historical_cash_id"
+    t.date     "date_cash"
+    t.decimal  "value_cash",                        :precision => 8, :scale => 2, :default => 0.0
+    t.string   "description",        :limit => 200
+    t.string   "type_cash",          :limit => 1
+    t.datetime "created_at",                                                                       :null => false
+    t.datetime "updated_at",                                                                       :null => false
+    t.string   "type_payment",       :limit => 1
+  end
+
+  create_table "date_cashes", :force => true do |t|
+    t.date     "date_cash"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "historical_cashes", :force => true do |t|
+    t.string   "description", :limit => 200
+    t.string   "type_cash",   :limit => 1
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
+  end
 
   create_table "posts", :force => true do |t|
     t.string   "visible",            :limit => 3
